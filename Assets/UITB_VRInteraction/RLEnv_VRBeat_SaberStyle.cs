@@ -21,6 +21,8 @@ namespace UserInTheBox
         private float _previousPoints, _initialPoints;
 
         private Transform _rightHand = null;
+        private bool _debug;
+        // public AudioModeManager audioModeManager;
 
         protected override void CalculateReward()
         {
@@ -63,7 +65,19 @@ namespace UserInTheBox
 
         public override void InitialiseGame()
         {
-            // Do nothing
+            // Check if debug mode is enabled
+            _debug = Application.isEditor;  //UitBUtils.GetOptionalArgument("debug");
+
+            // Get game variant and level
+            if (_debug)
+            {
+                simulatedUser.audioModeOn = true;
+                if (simulatedUser.audioModeOn) {
+                    audioModeManager.SignalType = "Stereo";
+                    audioModeManager.SampleType = "Amplitude";
+                    Debug.Log("Audio mode on, using signal type " + audioModeManager.SignalType + " and sample type " + audioModeManager.SampleType);
+                }
+            }
         }
 
         public override float GetTimeFeature()

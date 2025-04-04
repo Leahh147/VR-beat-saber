@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
+using VRBeats;
 
 // RGB-D rendering adapted from https://samarth-robo.github.io/blog/2021/12/28/unity_rgbd_rendering.html
 
@@ -9,6 +10,9 @@ namespace UserInTheBox
     {
         public Transform leftHandController, rightHandController;
         public Camera mainCamera;
+        // public AudioListener audioListener;
+        // public bool audioModeOn = false;
+        // public AudioManager audioManager;
         public RLEnv env;
         private ZmqServer _server;
         private string _port;
@@ -19,6 +23,10 @@ namespace UserInTheBox
         private bool _sendReply;
         private byte[] _previousImage;
         [SerializeField] private bool simulated;
+        public AudioListener audioListener;
+        public bool audioModeOn = false;
+        public AudioModeManager audioModeManager;
+        private float[] _audioData;
 
         public void Awake()
         {
@@ -48,11 +56,25 @@ namespace UserInTheBox
                 {
                     mainCamera.GetComponent<TrackedPoseDriver>().enabled = false;
                 }
+
+                // audioListener.transform.SetParent(mainCamera.transform);
+                // audioListener.transform.localPosition = Vector3.zero;
             }
             else
             {
                 // If SimulatedUser is not enabled, deactivate it and all its children
                 gameObject.SetActive(false);
+            }
+            
+            audioModeManager.m_AudioSensorComponent.CreateSensors();
+
+            string audioKeyword = UitBUtils.GetKeywordArgument("audioModeOn");
+            audioModeOn = audioKeyword == "true" ? true : false;
+            if (audioModeOn) {
+                string signalType_ = UitBUtils.GetOptionalKeywordArgument("signalType", "Stereo");
+                string sampleType_ = UitBUtils.GetOptionalKeywordArgument("sampleType", "Amplitude");
+                audioModeManager.SignalType = signalType_;
+                audioModeManager.SampleType = sampleType_;
             }
         }
 
@@ -140,6 +162,7 @@ namespace UserInTheBox
             else if (state.reset)
             {
                 env.Reset();
+                audioModeManager.m_AudioSensorComponent.OnSensorReset();
             }
         }
         
@@ -183,6 +206,12 @@ namespace UserInTheBox
             // Encode texture into PNG
             _previousImage = _tex.EncodeToPNG();
 
+            AudioSampling();
+
+            var samples2D = audioModeManager.m_AudioSensorComponent.Sensor.Buffer.Samples;
+            
+            _audioData = samples2D.Flatten();
+
             // Get reward
             var reward = env.GetReward();
 
@@ -196,11 +225,16 @@ namespace UserInTheBox
             var logDict = env.GetLogDict();
 
             // Send observation to client
-            _server.SendObservation(isFinished, reward, _previousImage, timeFeature, logDict);
+            _server.SendObservation(isFinished, reward, _previousImage, _audioData, timeFeature, logDict);
+        }
+        public void AudioSampling()
+        {
+            audioModeManager.m_AudioSensorComponent.SampleAudioinSimulatedUser();
         }
         
         private void OnDestroy()
         {
+            audioModeManager.m_AudioSensorComponent.OnDestroy();
             _server?.Close();
         }
 

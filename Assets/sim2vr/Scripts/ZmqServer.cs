@@ -38,6 +38,7 @@ namespace UserInTheBox
         public bool isFinished;
         public float reward;
         public byte[] image;
+        public float[] audio;  // new field for audio data
         public float timeFeature;
         // public Dictionary<string, float> logDict;
         public string logDict;  //json dict
@@ -69,6 +70,7 @@ namespace UserInTheBox
         public ZmqServer(string port, int timeOutSeconds)
         {
             Debug.Log("Starting up ZMQ server at tcp://localhost:" + port);
+            AsyncIO.ForceDotNet.Force();
             _socket = new ResponseSocket("@tcp://localhost:" + port);
             _gameObservation = new Observation();
             _timeOutSeconds = timeOutSeconds;
@@ -114,12 +116,13 @@ namespace UserInTheBox
             state = JsonUtility.FromJson<TMessage>(strMessage);
         }
 
-        public void SendObservation(bool isFinished, float reward, byte[] image, float timeFeature, Dictionary<string, object> logDict)
+        public void SendObservation(bool isFinished, float reward, byte[] image, float[] audio, float timeFeature, Dictionary<string, object> logDict)
         {
             // Populate reply
             _gameObservation.isFinished = isFinished;
             _gameObservation.reward = reward;
             _gameObservation.image = image;
+            _gameObservation.audio = audio;
             _gameObservation.timeFeature = timeFeature;
 
             _gameObservation.logDict = JsonConvert.SerializeObject(logDict);
@@ -136,7 +139,7 @@ namespace UserInTheBox
             Debug.Log("Connection confirmed");
             
             // Send an empty message to confirm connection
-            SendObservation(false, 0, null, -1, null);
+            SendObservation(false, 0, null, null, -1, null);
 
             return _timeOptions;
         }

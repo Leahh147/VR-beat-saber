@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using VRBeats;
 
 namespace UserInTheBox
 {
@@ -22,6 +23,14 @@ namespace UserInTheBox
 
         public bool overrideHeadsetOrientation = false;
         public Quaternion simulatedUserHeadsetOrientation;
+        public AudioModeManager audioModeManager;
+
+        public void UpdateAudioSettings()
+        {
+            audioModeManager.m_AudioSensorComponent.SampleType = audioModeManager.SampleType == "Amplitude" ? SampleType.Amplitude : SampleType.Spectrum;
+            audioModeManager.m_AudioSensorComponent.SignalType = audioModeManager.SignalType == "Mono" ? SignalType.Mono : SignalType.Stereo;
+            audioModeManager.m_AudioSensorComponent.UpdateSettings();
+        }
 
         public void Start()
         {
@@ -36,6 +45,10 @@ namespace UserInTheBox
 
             InitialiseGame();
             InitialiseReward();
+            if (simulatedUser.audioModeOn)
+            {
+                UpdateAudioSettings();
+            }
 
             // Enable logging if necessary
             logger.enabled = _logging;
