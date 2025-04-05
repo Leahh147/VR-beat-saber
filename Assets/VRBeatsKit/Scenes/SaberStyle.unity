@@ -1630,7 +1630,7 @@ PrefabInstance:
     - target: {fileID: 333135314957936365, guid: 55acb63834c2c1a3491aae0b24629611,
         type: 3}
       propertyPath: simulated
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 333135314957936365, guid: 55acb63834c2c1a3491aae0b24629611,
         type: 3}
@@ -2979,6 +2979,59 @@ AudioListener:
     type: 3}
   m_PrefabInstance: {fileID: 408071455}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1286802522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1286802524}
+  - component: {fileID: 1286802523}
+  m_Layer: 0
+  m_Name: EveryNight (Saber)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &1286802523
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286802522}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 23be2b7c74a9ac14cbc4255a9e7459e9, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -498116564073401085, guid: 23be2b7c74a9ac14cbc4255a9e7459e9, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5371815694391582293, guid: 23be2b7c74a9ac14cbc4255a9e7459e9, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
+--- !u!4 &1286802524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286802522}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1334890578
 GameObject:
   m_ObjectHideFlags: 0

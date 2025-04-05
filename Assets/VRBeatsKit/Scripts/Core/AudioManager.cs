@@ -38,7 +38,7 @@ namespace VRBeats
 
         public void SetAudioMixerPitch(float value)
         {
-            audioSource.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", value);
+            audioSource.outputAudioMixerGroup.audioMixer.SetFloat("Pitch", value * Time.timeScale);
         }
 
     }

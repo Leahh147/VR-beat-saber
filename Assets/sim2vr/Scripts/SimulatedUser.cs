@@ -68,14 +68,14 @@ namespace UserInTheBox
             
             audioModeManager.m_AudioSensorComponent.CreateSensors();
 
-            string audioKeyword = UitBUtils.GetKeywordArgument("audioModeOn");
-            audioModeOn = audioKeyword == "true" ? true : false;
-            if (audioModeOn) {
-                string signalType_ = UitBUtils.GetOptionalKeywordArgument("signalType", "Stereo");
-                string sampleType_ = UitBUtils.GetOptionalKeywordArgument("sampleType", "Amplitude");
-                audioModeManager.SignalType = signalType_;
-                audioModeManager.SampleType = sampleType_;
-            }
+            // string audioKeyword = UitBUtils.GetKeywordArgument("audioModeOn");
+            // audioModeOn = audioKeyword == "true" ? true : false;
+            // if (audioModeOn) {
+            //     string signalType_ = UitBUtils.GetOptionalKeywordArgument("signalType", "Stereo");
+            //     string sampleType_ = UitBUtils.GetOptionalKeywordArgument("sampleType", "Amplitude");
+            //     audioModeManager.SignalType = signalType_;
+            //     audioModeManager.SampleType = sampleType_;
+            // }
         }
 
         public void Start()
