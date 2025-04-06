@@ -36,17 +36,17 @@ public class AudioModeManager : MonoBehaviour
     {
         if (!VRBeatsMode)
         {
-        Debug.Log("Looking for audio in: " + Application.dataPath + "/Resources/" + audioFolder);
-        m_AudioSource = GetComponent<AudioSource>();
-        m_Clips = new List<AudioClip>();
-        var clips = Resources.LoadAll(audioFolder, typeof(AudioClip));
-        foreach (var clip in clips)
-        {
-            AudioClip audioClip = (AudioClip)clip;
-            m_Clips.Add(audioClip);
-            Debug.Log("Loaded audio clip: " + audioClip.name);
-        }
-        StartCoroutine(PlayAudioClip()); // form an infinite loop
+            Debug.Log("Looking for audio in: " + Application.dataPath + "/Resources/" + audioFolder);
+            m_AudioSource = GetComponent<AudioSource>();
+            m_Clips = new List<AudioClip>();
+            var clips = Resources.LoadAll(audioFolder, typeof(AudioClip));
+            foreach (var clip in clips)
+            {
+                AudioClip audioClip = (AudioClip)clip;
+                m_Clips.Add(audioClip);
+                Debug.Log("Loaded audio clip: " + audioClip.name);
+            }
+            StartCoroutine(PlayAudioClip()); // form an infinite loop
         }
         
 
