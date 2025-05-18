@@ -791,11 +791,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: 446a20e5-fa86-437d-840d-f6e7ece83c8d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: EnfermeriaVR (1)
-  organizationId: 
+  projectName: VR-beat-saber
+  organizationId: leahh147
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
   playerDataPath: 

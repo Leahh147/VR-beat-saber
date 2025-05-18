@@ -1629,9 +1629,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 333135314957936365, guid: 55acb63834c2c1a3491aae0b24629611,
         type: 3}
+      propertyPath: simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 333135314957936365, guid: 55acb63834c2c1a3491aae0b24629611,
+        type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 408071459}
+    - target: {fileID: 333135314957936365, guid: 55acb63834c2c1a3491aae0b24629611,
+        type: 3}
+      propertyPath: audioListener
+      value: 
+      objectReference: {fileID: 1267557617}
+    - target: {fileID: 333135314957936365, guid: 55acb63834c2c1a3491aae0b24629611,
+        type: 3}
+      propertyPath: audioModeManager
+      value: 
+      objectReference: {fileID: 1872521058}
     - target: {fileID: 333135314957936365, guid: 55acb63834c2c1a3491aae0b24629611,
         type: 3}
       propertyPath: leftHandController
@@ -2958,6 +2973,65 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 408071455}
   m_PrefabAsset: {fileID: 0}
+--- !u!81 &1267557617 stripped
+AudioListener:
+  m_CorrespondingSourceObject: {fileID: 8546668447772986807, guid: 6c76d6b3d3d855d4eacdeeef1e96c85c,
+    type: 3}
+  m_PrefabInstance: {fileID: 408071455}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1286802522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1286802524}
+  - component: {fileID: 1286802523}
+  m_Layer: 0
+  m_Name: EveryNight (Saber)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &1286802523
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286802522}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 23be2b7c74a9ac14cbc4255a9e7459e9, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -498116564073401085, guid: 23be2b7c74a9ac14cbc4255a9e7459e9, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5371815694391582293, guid: 23be2b7c74a9ac14cbc4255a9e7459e9, type: 2}
+    value: {fileID: 0}
+  m_ExposedReferences:
+    m_References: []
+--- !u!4 &1286802524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286802522}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1334890578
 GameObject:
   m_ObjectHideFlags: 0
@@ -4048,8 +4122,8 @@ MonoBehaviour:
   m_RepeatDelay: 0.5
   m_RepeatRate: 0.1
   m_TrackedDeviceDragThresholdMultiplier: 2
+  m_TrackedScrollDeltaMultiplier: 5
   m_ActiveInputMode: 0
-  m_MaxTrackedDeviceRaycastDistance: 1000
   m_EnableXRInput: 1
   m_EnableMouseInput: 1
   m_EnableTouchInput: 1
@@ -4086,8 +4160,8 @@ MonoBehaviour:
   m_RepeatDelay: 0.5
   m_RepeatRate: 0.1
   m_TrackedDeviceDragThresholdMultiplier: 2
+  m_TrackedScrollDeltaMultiplier: 5
   m_ActiveInputMode: 0
-  m_MaxTrackedDeviceRaycastDistance: 1000
   m_EnableXRInput: 1
   m_EnableMouseInput: 1
   m_EnableTouchInput: 1
@@ -4262,6 +4336,94 @@ Transform:
   m_Father: {fileID: 1566194152}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1872521057
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1872521059}
+  - component: {fileID: 1872521058}
+  - component: {fileID: 1872521060}
+  m_Layer: 0
+  m_Name: AudioModeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1872521058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872521057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c83e6a848925c46b4931ff23f51192, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioFolder: AudioClips
+  m_AudioSource: {fileID: 0}
+  m_AudioSensorComponent: {fileID: 1872521060}
+  VRBeatsMode: 1
+--- !u!4 &1872521059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872521057}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1872521060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872521057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 502af2fdd69f9e34f9e9b71d0fb1bbb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SensorName: AudioSensor
+  m_BufferLength: 1
+  m_CompressionType: 0
+  m_SignalType: 1
+  m_SampleType: 0
+  m_FFTWindow: 0
+  m_FFTBitWidth: 12
+  m_FFTMinFreqLog: 1.30103
+  m_FFTMaxFreqLog: 4.30103
+  m_FFTFloorLog: -4.321928
+  m_AmpFloorLog: -4.321928
+  m_Normalize: 0
+  m_Shape:
+    SignalType: 0
+    Width: 0
+    Height: 0
+  m_samplingEnabled: 1
+  m_CalibrationButtonActive: 0
+  m_SettingsWatcher:
+    SampleType: 0
+    SignalType: 0
+    FFTWindow: 0
+    FFTResolution: 0
+    FFTFloor: 0
+    AmpFloor: 0
+  m_FFTExpansionFactors: []
+  m_AmpExpansionFactor: 0
 --- !u!1 &1908674065
 GameObject:
   m_ObjectHideFlags: 0
@@ -4466,6 +4628,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   simulatedUser: {fileID: 68114080}
   logger: {fileID: 58555792}
+  overrideHeadsetOrientation: 0
+  simulatedUserHeadsetOrientation: {x: 0, y: 0, z: 0, w: 0}
+  audioModeManager: {fileID: 1872521058}
   vrbeatManager: {fileID: 1215359034}
   scoreManager: {fileID: 454873730}
   triggerButton: {fileID: 860346057}
