@@ -42,12 +42,12 @@ git clone https://github.com/Leahh147/VR-beat-saber.git
 
 ---
 
-## How to set up the auditory processor
+## How to set up the audio extension
 - Import [ML-Agents](https://docs.unity3d.com/Packages/com.unity.ml-agents@3.0/manual/) in Unity Package Manager and [ml-audio-sensor](https://github.com/mbaske/ml-audio-sensor) under the `Asset/VRBeatsKit` folder
 - Create an `AudioModeManager` in the Unity game and attach the `Audio Sensor Component` to the `AudioModeManager`
 - Modify `SimulatedUser.cs` and `RLEnv_VRBeat_SaberStyle.cs` by adding `audioData`, `audioModeOn` and `audioModeManager`
-- Set the pitch in accordance with the time scale
-- By choosing the sample and the signal type in the config file, you can process the auditory signals using the `AudioProcessor` and `2D/3D Audio Encoder` in the UitB module
+- Set the pitch in accordance with the time scale, this synchronizes the audio with the game
+- By choosing the sample and the signal type in the config file, you can process the auditory signals using the `AudioProcessor` and `2D/3D Audio Encoder` in the [UitB](https://github.com/Leahh147/uitb_private) module
 
 ## Training Simulated Users
 
