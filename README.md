@@ -20,7 +20,7 @@ The VR Beats game allows players to slice through incoming boxes using dual ligh
 - Integrated SIM2VR framework for automated biomechanical testing  
 - Visual cues for the simulated user through an RGB-D camera  
 - Proprioception signals for joint angles and muscle states
-- Auditory cues enabled using the [ml-audio-sensor](https://github.com/mbaske/ml-audio-sensor) package
+- **Auditory cues** enabled using the [ml-audio-sensor](https://github.com/mbaske/ml-audio-sensor) package
 
 ---
 
