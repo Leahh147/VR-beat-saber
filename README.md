@@ -8,7 +8,8 @@ This project extends the Beat Saber-style VR game in the **SIM2VR** framework wi
 
 The VR Beats game allows players to slice through incoming boxes using dual lightsabers, while the SIM2VR framework enables automated testing by simulating a biomechanical user model that can interact with the game just as a real user would. This creates a closed interaction loop between the simulated user and the same VR application that real users interact with.
 
-
+![VR Beat Saber with medium effort cost](./beatsvr_neural_1e2.gif)
+> **Video Credit:** [Fischer et al. (2024)](https://github.com/fl0fischer/sim2vr)
 
 ---
 
