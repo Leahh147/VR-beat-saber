@@ -42,8 +42,8 @@ git clone https://github.com/Leahh147/VR-beat-saber.git
 ---
 
 ## How to set up the auditory processor
-- Import [ML-Agents](https://docs.unity3d.com/Packages/com.unity.ml-agents@3.0/manual/) in Unity Package Manager and [ml-audio-sensor](https://github.com/mbaske/ml-audio-sensor) under the `uitb/perception` folder
-- Create an `AudioModeManager` in the Unity game and attach the `Audio Sensor Component` to the audio mode manager
+- Import [ML-Agents](https://docs.unity3d.com/Packages/com.unity.ml-agents@3.0/manual/) in Unity Package Manager and [ml-audio-sensor](https://github.com/mbaske/ml-audio-sensor) under the `Asset/VRBeatsKit` folder
+- Create an `AudioModeManager` in the Unity game and attach the `Audio Sensor Component` to the `AudioModeManager`
 - Modify `SimulatedUser.cs` and `RLEnv_VRBeat_SaberStyle.cs` by adding `audioData`, `audioModeOn` and `audioModeManager`
 - Set the pitch in accordance with the time scale
 - By choosing the sample and the signal type in the config file, you can process the auditory signals using the `AudioProcessor` and `2D/3D Audio Encoder` in the UitB module
@@ -108,7 +108,7 @@ This can be used to simulate different user profiles in VR environments.
 ---
 
 ## Acknowledgements
-- **VR-beat-saber** by the research group at University of Bayreuth.
+- **VR-beat-saber** by the research group at University of Bayreuth
 - **SIM2VR framework** by Fischer et al.  
 - **User-in-the-Box (UitB)** framework by Ikkala et al.  
 - **VR Beats Kit** from the Unity Asset Store  
