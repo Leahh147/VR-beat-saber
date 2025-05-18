@@ -108,6 +108,9 @@ This can be used to simulate different user profiles in VR environments.
 
 ---
 
+## Future Implementation
+The audio extension currently only has limited analytical ability. To better fit the auditory cues with the game, refer to the [Temporal Task](https://github.com/Leahh147/TemporalTask) to investigate how timed audio cues can improve user performance. In the future, more complex policy architecture can be implemented, such as RNN or LSTM, so that the agent can memorize the past information.
+
 ## Acknowledgements
 - **VR-beat-saber** by the research group at University of Bayreuth
 - **SIM2VR framework** by Fischer et al.  
